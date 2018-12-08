@@ -115,17 +115,60 @@ MyBliss. Inc.
                                 <color key="textColor" red="1" green="0.61424558911780824" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3o-aV-xY6">
+                                <rect key="frame" x="125" y="249" width="70" height="70"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="FHm-FI-Kx9">
+                                        <rect key="frame" x="25" y="18" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="9LY-jv-NvP"/>
+                                            <constraint firstAttribute="width" constant="20" id="aiY-O5-uAR"/>
+                                        </constraints>
+                                        <color key="color" red="0.25882352939999997" green="0.61960784310000006" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hth-Sb-jPQ">
+                                        <rect key="frame" x="0.0" y="46" width="70" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="yTP-o2-3qN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Hth-Sb-jPQ" secondAttribute="bottom" constant="4" id="5uP-uh-5c7"/>
+                                    <constraint firstAttribute="height" constant="70" id="P5j-ep-YV4"/>
+                                    <constraint firstItem="Hth-Sb-jPQ" firstAttribute="leading" secondItem="S3o-aV-xY6" secondAttribute="leading" id="eGZ-Op-CgV"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hth-Sb-jPQ" secondAttribute="trailing" id="g4b-bg-jyz"/>
+                                    <constraint firstAttribute="width" constant="70" id="gWB-NN-l2D"/>
+                                    <constraint firstItem="FHm-FI-Kx9" firstAttribute="centerY" secondItem="S3o-aV-xY6" secondAttribute="centerY" multiplier="0.8" id="i5w-Rc-xRn"/>
+                                    <constraint firstItem="FHm-FI-Kx9" firstAttribute="centerX" secondItem="S3o-aV-xY6" secondAttribute="centerX" id="zos-mm-PVT"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6A-au-7Wr">
+                                <rect key="frame" x="0.0" y="94" width="320" height="474"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="nTh-Cc-QKq" firstAttribute="trailing" secondItem="40L-i3-qRH" secondAttribute="trailing" constant="16" id="0G1-5a-5v0"/>
                             <constraint firstItem="Kpf-Ja-z4G" firstAttribute="leading" secondItem="JZS-yl-pKD" secondAttribute="trailing" constant="16" id="2wK-TT-d9U"/>
+                            <constraint firstItem="G6A-au-7Wr" firstAttribute="bottom" secondItem="nTh-Cc-QKq" secondAttribute="bottom" id="4TV-jh-dsY"/>
                             <constraint firstItem="40L-i3-qRH" firstAttribute="bottom" secondItem="JZS-yl-pKD" secondAttribute="bottom" id="5Rb-A3-GOf"/>
+                            <constraint firstItem="G6A-au-7Wr" firstAttribute="trailing" secondItem="nTh-Cc-QKq" secondAttribute="trailing" id="7VU-Gh-Isz"/>
+                            <constraint firstItem="G6A-au-7Wr" firstAttribute="top" secondItem="JZS-yl-pKD" secondAttribute="bottom" constant="8" id="Aya-sW-cFs"/>
                             <constraint firstItem="JZS-yl-pKD" firstAttribute="leading" secondItem="nTh-Cc-QKq" secondAttribute="leading" constant="16" id="FD5-Is-fcH"/>
                             <constraint firstItem="40L-i3-qRH" firstAttribute="leading" secondItem="JZS-yl-pKD" secondAttribute="trailing" constant="16" id="MpL-ea-5ps"/>
+                            <constraint firstItem="G6A-au-7Wr" firstAttribute="leading" secondItem="nTh-Cc-QKq" secondAttribute="leading" id="OfG-Yz-yK3"/>
                             <constraint firstItem="40L-i3-qRH" firstAttribute="top" secondItem="Kpf-Ja-z4G" secondAttribute="bottom" id="Xj4-49-sOl"/>
                             <constraint firstItem="JZS-yl-pKD" firstAttribute="top" secondItem="nTh-Cc-QKq" secondAttribute="top" constant="16" id="lJg-hw-T1L"/>
+                            <constraint firstItem="S3o-aV-xY6" firstAttribute="centerX" secondItem="MYX-mR-Iix" secondAttribute="centerX" id="rAu-Hh-5J1"/>
                             <constraint firstItem="Kpf-Ja-z4G" firstAttribute="top" secondItem="JZS-yl-pKD" secondAttribute="top" id="w62-Hy-JOx"/>
+                            <constraint firstItem="S3o-aV-xY6" firstAttribute="centerY" secondItem="MYX-mR-Iix" secondAttribute="centerY" id="zTh-ba-TME"/>
                             <constraint firstItem="nTh-Cc-QKq" firstAttribute="trailing" secondItem="Kpf-Ja-z4G" secondAttribute="trailing" constant="16" id="zhe-iq-koh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nTh-Cc-QKq"/>
@@ -135,6 +178,7 @@ MyBliss. Inc.
                     <connections>
                         <outlet property="imageViewLogo" destination="SH9-r4-mP4" id="nrD-q9-OXZ"/>
                         <outlet property="labelDate" destination="40L-i3-qRH" id="VEx-cx-ung"/>
+                        <outlet property="viewActivity" destination="S3o-aV-xY6" id="fAe-fu-zzs"/>
                         <outlet property="viewImageOuter" destination="JZS-yl-pKD" id="K6y-6D-g8h"/>
                     </connections>
                 </viewController>

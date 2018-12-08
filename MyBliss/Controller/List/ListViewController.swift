@@ -13,6 +13,7 @@ class ListViewController: UIViewController
     @IBOutlet weak var viewImageOuter: UIView!
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var viewActivity: UIView!
     
     var gradientLayer = CAGradientLayer()
     
@@ -30,6 +31,24 @@ class ListViewController: UIViewController
         formatter.dateFormat = "EEEE, MMM d, yyyy"
         let result = formatter.string(from: date)
         labelDate.text = result
+        
+        viewActivity.layer.cornerRadius = 10
+        viewActivity.clipsToBounds = true
+        view.bringSubviewToFront(viewActivity)
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        viewActivity.isHidden = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        viewActivity.isHidden = false
     }
     
     override func viewWillLayoutSubviews()
