@@ -17,16 +17,130 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoMyBliss" translatesAutoresizingMaskIntoConstraints="NO" id="1wi-fe-aMh">
+                                <rect key="frame" x="35" y="159" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgH-p1-hyh">
+                                <rect key="frame" x="20" y="463" width="280" height="85"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Powered By">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="ChalkboardSE-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+MyBliss. Inc.
+</string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.25882352941176467" green="0.61960784313725492" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="ChalkboardSE-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Archisman Banerjee">
+                                        <attributes>
+                                            <color key="NSColor" red="0.92784363031387329" green="0.30044993758201599" blue="0.49554949998855591" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="20" name="ChalkboardSE-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DgH-p1-hyh" secondAttribute="trailing" constant="20" id="4Ju-mt-ORG"/>
+                            <constraint firstItem="DgH-p1-hyh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="P9o-lm-fel"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DgH-p1-hyh" secondAttribute="bottom" constant="20" id="rN8-TX-0Oe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sEt-N4-wSP"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="imageViewLogo" destination="1wi-fe-aMh" id="gyZ-Pi-o7h"/>
+                        <outlet property="labelLaunchTitle" destination="DgH-p1-hyh" id="7f3-QK-IaA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134.375" y="133.09859154929578"/>
+            <point key="canvasLocation" x="1133" y="133"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="6BO-H9-MDK">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9gK-Kt-qMq" customClass="ListViewController" customModule="MyBliss" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MYX-mR-Iix">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZS-yl-pKD">
+                                <rect key="frame" x="16" y="36" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMyBliss" translatesAutoresizingMaskIntoConstraints="NO" id="SH9-r4-mP4">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="SH9-r4-mP4" firstAttribute="top" secondItem="JZS-yl-pKD" secondAttribute="top" id="DBf-RF-KpY"/>
+                                    <constraint firstAttribute="height" constant="50" id="HGh-08-3go"/>
+                                    <constraint firstAttribute="trailing" secondItem="SH9-r4-mP4" secondAttribute="trailing" id="dGK-RI-0cS"/>
+                                    <constraint firstItem="SH9-r4-mP4" firstAttribute="leading" secondItem="JZS-yl-pKD" secondAttribute="leading" id="o2A-no-dLK"/>
+                                    <constraint firstAttribute="bottom" secondItem="SH9-r4-mP4" secondAttribute="bottom" id="qel-XV-1CG"/>
+                                    <constraint firstAttribute="width" constant="50" id="snP-no-wze"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyBliss" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-Ja-z4G">
+                                <rect key="frame" x="82" y="36" width="222" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="UZE-GW-uXk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyBliss" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40L-i3-qRH">
+                                <rect key="frame" x="82" y="61" width="222" height="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.61424558911780824" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nTh-Cc-QKq" firstAttribute="trailing" secondItem="40L-i3-qRH" secondAttribute="trailing" constant="16" id="0G1-5a-5v0"/>
+                            <constraint firstItem="Kpf-Ja-z4G" firstAttribute="leading" secondItem="JZS-yl-pKD" secondAttribute="trailing" constant="16" id="2wK-TT-d9U"/>
+                            <constraint firstItem="40L-i3-qRH" firstAttribute="bottom" secondItem="JZS-yl-pKD" secondAttribute="bottom" id="5Rb-A3-GOf"/>
+                            <constraint firstItem="JZS-yl-pKD" firstAttribute="leading" secondItem="nTh-Cc-QKq" secondAttribute="leading" constant="16" id="FD5-Is-fcH"/>
+                            <constraint firstItem="40L-i3-qRH" firstAttribute="leading" secondItem="JZS-yl-pKD" secondAttribute="trailing" constant="16" id="MpL-ea-5ps"/>
+                            <constraint firstItem="40L-i3-qRH" firstAttribute="top" secondItem="Kpf-Ja-z4G" secondAttribute="bottom" id="Xj4-49-sOl"/>
+                            <constraint firstItem="JZS-yl-pKD" firstAttribute="top" secondItem="nTh-Cc-QKq" secondAttribute="top" constant="16" id="lJg-hw-T1L"/>
+                            <constraint firstItem="Kpf-Ja-z4G" firstAttribute="top" secondItem="JZS-yl-pKD" secondAttribute="top" id="w62-Hy-JOx"/>
+                            <constraint firstItem="nTh-Cc-QKq" firstAttribute="trailing" secondItem="Kpf-Ja-z4G" secondAttribute="trailing" constant="16" id="zhe-iq-koh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nTh-Cc-QKq"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="imageViewLogo" destination="SH9-r4-mP4" id="nrD-q9-OXZ"/>
+                        <outlet property="labelDate" destination="40L-i3-qRH" id="VEx-cx-ung"/>
+                        <outlet property="viewImageOuter" destination="JZS-yl-pKD" id="K6y-6D-g8h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnK-mn-9Ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1792.5" y="132.04225352112675"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="klC-Ha-0mV">
@@ -45,7 +159,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlf-cx-PFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="326" y="133"/>
+            <point key="canvasLocation" x="463" y="130"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logoMyBliss" width="512" height="512"/>
+    </resources>
 </document>
