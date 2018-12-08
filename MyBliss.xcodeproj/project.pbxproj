@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		032D174821BBBA2100710A6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D174721BBBA2100710A6F /* AppDelegate.swift */; };
-		032D174A21BBBA2100710A6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D174921BBBA2100710A6F /* ViewController.swift */; };
+		032D174A21BBBA2100710A6F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D174921BBBA2100710A6F /* LaunchViewController.swift */; };
 		032D174D21BBBA2100710A6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032D174B21BBBA2100710A6F /* Main.storyboard */; };
 		032D174F21BBBA2300710A6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032D174E21BBBA2300710A6F /* Assets.xcassets */; };
 		032D175221BBBA2300710A6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032D175021BBBA2300710A6F /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		032D174421BBBA2100710A6F /* MyBliss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBliss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		032D174721BBBA2100710A6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		032D174921BBBA2100710A6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		032D174921BBBA2100710A6F /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		032D174C21BBBA2100710A6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		032D174E21BBBA2300710A6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		032D175121BBBA2300710A6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,46 @@
 		032D174621BBBA2100710A6F /* MyBliss */ = {
 			isa = PBXGroup;
 			children = (
-				032D174721BBBA2100710A6F /* AppDelegate.swift */,
-				032D174921BBBA2100710A6F /* ViewController.swift */,
-				032D174B21BBBA2100710A6F /* Main.storyboard */,
+				032D175921BBBD3300710A6F /* AppDelegate */,
+				032D175A21BBBDEA00710A6F /* Controller */,
+				032D175C21BBBE5800710A6F /* Stroryboard */,
 				032D174E21BBBA2300710A6F /* Assets.xcassets */,
-				032D175021BBBA2300710A6F /* LaunchScreen.storyboard */,
 				032D175321BBBA2300710A6F /* Info.plist */,
 			);
 			path = MyBliss;
+			sourceTree = "<group>";
+		};
+		032D175921BBBD3300710A6F /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				032D174721BBBA2100710A6F /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		032D175A21BBBDEA00710A6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				032D175B21BBBDF900710A6F /* Launch */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		032D175B21BBBDF900710A6F /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				032D174921BBBA2100710A6F /* LaunchViewController.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		032D175C21BBBE5800710A6F /* Stroryboard */ = {
+			isa = PBXGroup;
+			children = (
+				032D174B21BBBA2100710A6F /* Main.storyboard */,
+				032D175021BBBA2300710A6F /* LaunchScreen.storyboard */,
+			);
+			path = Stroryboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				032D174A21BBBA2100710A6F /* ViewController.swift in Sources */,
+				032D174A21BBBA2100710A6F /* LaunchViewController.swift in Sources */,
 				032D174821BBBA2100710A6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
