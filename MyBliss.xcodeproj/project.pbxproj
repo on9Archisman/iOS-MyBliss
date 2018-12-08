@@ -17,6 +17,7 @@
 		032D176521BBD68400710A6F /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D176421BBD68400710A6F /* UINavigationController+Extension.swift */; };
 		032D176821BBD6CC00710A6F /* CommonFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D176721BBD6CC00710A6F /* CommonFunction.swift */; };
 		032D176A21BBD72E00710A6F /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D176921BBD72E00710A6F /* Singleton.swift */; };
+		03E29EAA21BC28DF00995BE8 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E29EA921BC28DF00995BE8 /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		032D176421BBD68400710A6F /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		032D176721BBD6CC00710A6F /* CommonFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunction.swift; sourceTree = "<group>"; };
 		032D176921BBD72E00710A6F /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		03E29EA921BC28DF00995BE8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				032D175E21BBD59900710A6F /* ListViewController.swift */,
+				03E29EA921BC28DF00995BE8 /* ListTableViewCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				032D176321BBD64700710A6F /* UIViewController+Extension.swift in Sources */,
+				03E29EAA21BC28DF00995BE8 /* ListTableViewCell.swift in Sources */,
 				032D176A21BBD72E00710A6F /* Singleton.swift in Sources */,
 				032D174A21BBBA2100710A6F /* LaunchViewController.swift in Sources */,
 				032D176521BBD68400710A6F /* UINavigationController+Extension.swift in Sources */,

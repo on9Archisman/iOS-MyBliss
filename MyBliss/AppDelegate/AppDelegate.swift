@@ -8,6 +8,8 @@
 
 import UIKit
 
+let baseURL: String =  "http://apidev.mybliss.ai/"
+
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate
