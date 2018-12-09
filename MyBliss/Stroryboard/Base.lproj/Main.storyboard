@@ -103,14 +103,17 @@ MyBliss. Inc.
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyBliss" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kpf-Ja-z4G">
                                 <rect key="frame" x="82" y="36" width="222" height="25"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="UZE-GW-uXk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyBliss" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40L-i3-qRH">
                                 <rect key="frame" x="82" y="61" width="222" height="25"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -151,7 +154,7 @@ MyBliss. Inc.
                                 <rect key="frame" x="0.0" y="102" width="320" height="466"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="REUSE" rowHeight="115" id="tEz-Kg-yBh" customClass="ListTableViewCell" customModule="MyBliss" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="115"/>
@@ -164,13 +167,13 @@ MyBliss. Inc.
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="114.5"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qZy-cj-SSU">
-                                                            <rect key="frame" x="10" y="15" width="70" height="85"/>
+                                                            <rect key="frame" x="10" y="20" width="60" height="75"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opt-pA-SYk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="85"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="75"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMJ-eU-liQ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="25"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="25"/>
                                                                             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="Rpc-6C-ja6"/>
@@ -179,9 +182,9 @@ MyBliss. Inc.
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heT-0a-Z9A">
-                                                                            <rect key="frame" x="0.0" y="60" width="70" height="25"/>
-                                                                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1991" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heT-0a-Z9A">
+                                                                            <rect key="frame" x="0.0" y="50" width="60" height="25"/>
+                                                                            <color key="backgroundColor" red="0.25882352941176467" green="0.61960784313725492" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="25" id="E9Z-N8-XNy"/>
                                                                             </constraints>
@@ -190,7 +193,7 @@ MyBliss. Inc.
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7no-x4-8Ug">
-                                                                            <rect key="frame" x="0.0" y="25" width="70" height="35"/>
+                                                                            <rect key="frame" x="0.0" y="25" width="60" height="25"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                             <nil key="highlightedColor"/>
@@ -214,25 +217,31 @@ MyBliss. Inc.
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="opt-pA-SYk" firstAttribute="leading" secondItem="qZy-cj-SSU" secondAttribute="leading" id="BzS-Hu-Nfe"/>
-                                                                <constraint firstAttribute="width" constant="70" id="K28-0g-EmE"/>
+                                                                <constraint firstAttribute="width" constant="60" id="K28-0g-EmE"/>
                                                                 <constraint firstAttribute="bottom" secondItem="opt-pA-SYk" secondAttribute="bottom" id="R7v-Lx-exe"/>
                                                                 <constraint firstItem="opt-pA-SYk" firstAttribute="top" secondItem="qZy-cj-SSU" secondAttribute="top" id="YYo-hT-mN6"/>
                                                                 <constraint firstAttribute="trailing" secondItem="opt-pA-SYk" secondAttribute="trailing" id="hhy-hP-MTp"/>
-                                                                <constraint firstAttribute="height" constant="85" id="jbM-ZZ-0yd"/>
+                                                                <constraint firstAttribute="height" constant="75" id="jbM-ZZ-0yd"/>
                                                             </constraints>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-Ch-pio">
-                                                            <rect key="frame" x="210" y="15" width="100" height="85"/>
+                                                            <rect key="frame" x="210" y="12.5" width="100" height="90"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="85" id="5fw-Ae-0mr"/>
+                                                                <constraint firstAttribute="height" constant="90" id="5fw-Ae-0mr"/>
                                                                 <constraint firstAttribute="width" constant="100" id="vuo-TM-pTs"/>
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBZ-qd-4ro">
-                                                            <rect key="frame" x="210" y="15" width="100" height="85"/>
-                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3534888698630137" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <rect key="frame" x="210" y="12.5" width="100" height="90"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30155714897260272" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SH-25-thE">
+                                                            <rect key="frame" x="80" y="20" width="120" height="75"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -240,10 +249,14 @@ MyBliss. Inc.
                                                         <constraint firstItem="Vkk-Ch-pio" firstAttribute="centerY" secondItem="bD0-uY-EwX" secondAttribute="centerY" id="3lC-8Q-0KN"/>
                                                         <constraint firstAttribute="trailing" secondItem="Vkk-Ch-pio" secondAttribute="trailing" constant="10" id="45M-Ub-7Yb"/>
                                                         <constraint firstItem="qZy-cj-SSU" firstAttribute="leading" secondItem="bD0-uY-EwX" secondAttribute="leading" constant="10" id="ID5-pO-gIB"/>
+                                                        <constraint firstItem="6SH-25-thE" firstAttribute="bottom" secondItem="qZy-cj-SSU" secondAttribute="bottom" id="JOl-nq-ewb"/>
                                                         <constraint firstItem="gBZ-qd-4ro" firstAttribute="trailing" secondItem="Vkk-Ch-pio" secondAttribute="trailing" id="N2M-6m-AdK"/>
                                                         <constraint firstItem="gBZ-qd-4ro" firstAttribute="leading" secondItem="Vkk-Ch-pio" secondAttribute="leading" id="Zbn-ZC-GPr"/>
                                                         <constraint firstItem="qZy-cj-SSU" firstAttribute="centerY" secondItem="bD0-uY-EwX" secondAttribute="centerY" id="dvD-jb-vaI"/>
                                                         <constraint firstItem="gBZ-qd-4ro" firstAttribute="top" secondItem="Vkk-Ch-pio" secondAttribute="top" id="mGI-hJ-j9w"/>
+                                                        <constraint firstItem="6SH-25-thE" firstAttribute="top" secondItem="qZy-cj-SSU" secondAttribute="top" id="ozJ-tg-gEF"/>
+                                                        <constraint firstItem="Vkk-Ch-pio" firstAttribute="leading" secondItem="6SH-25-thE" secondAttribute="trailing" constant="10" id="qJE-GV-dNl"/>
+                                                        <constraint firstItem="6SH-25-thE" firstAttribute="leading" secondItem="qZy-cj-SSU" secondAttribute="trailing" constant="10" id="rPJ-MI-CKM"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -260,6 +273,7 @@ MyBliss. Inc.
                                             <outlet property="labelDateDay" destination="7no-x4-8Ug" id="u6j-5T-8bp"/>
                                             <outlet property="labelDateMonth" destination="LMJ-eU-liQ" id="nvh-ht-3C3"/>
                                             <outlet property="labelDateYear" destination="heT-0a-Z9A" id="1i4-Zz-3oc"/>
+                                            <outlet property="labelTitle" destination="6SH-25-thE" id="aHn-51-506"/>
                                             <outlet property="viewDate" destination="opt-pA-SYk" id="Ila-Hc-giB"/>
                                             <outlet property="viewDateShadow" destination="qZy-cj-SSU" id="sIl-nX-qon"/>
                                             <outlet property="viewImageLinkShadow" destination="gBZ-qd-4ro" id="oxG-gK-13N"/>
@@ -306,6 +320,63 @@ MyBliss. Inc.
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnK-mn-9Ic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1792.5" y="132.04225352112675"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="j7J-83-FCQ">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zZW-yO-Ev2" customClass="DetailViewController" customModule="MyBliss" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZJS-FN-qcR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-0w-3S4">
+                                <rect key="frame" x="16" y="36" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMyBliss" translatesAutoresizingMaskIntoConstraints="NO" id="D8m-Ia-8az">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="D8m-Ia-8az" secondAttribute="trailing" id="4fg-es-AHo"/>
+                                    <constraint firstAttribute="width" constant="50" id="IoX-KC-Kjf"/>
+                                    <constraint firstItem="D8m-Ia-8az" firstAttribute="top" secondItem="gOr-0w-3S4" secondAttribute="top" id="UoP-ZW-nj8"/>
+                                    <constraint firstAttribute="bottom" secondItem="D8m-Ia-8az" secondAttribute="bottom" id="aGs-9H-Lp1"/>
+                                    <constraint firstAttribute="height" constant="50" id="d6D-3C-7Yo"/>
+                                    <constraint firstItem="D8m-Ia-8az" firstAttribute="leading" secondItem="gOr-0w-3S4" secondAttribute="leading" id="kUT-0w-x8w"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyBliss" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDo-JF-Dqm">
+                                <rect key="frame" x="82" y="36" width="222" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0xL-1J-dBt" firstAttribute="trailing" secondItem="hDo-JF-Dqm" secondAttribute="trailing" constant="16" id="59H-G5-0Id"/>
+                            <constraint firstItem="gOr-0w-3S4" firstAttribute="leading" secondItem="0xL-1J-dBt" secondAttribute="leading" constant="16" id="T9k-cZ-JYo"/>
+                            <constraint firstItem="gOr-0w-3S4" firstAttribute="top" secondItem="0xL-1J-dBt" secondAttribute="top" constant="16" id="d9W-Tv-L3T"/>
+                            <constraint firstItem="hDo-JF-Dqm" firstAttribute="top" secondItem="gOr-0w-3S4" secondAttribute="top" id="fwv-rk-rq4"/>
+                            <constraint firstItem="hDo-JF-Dqm" firstAttribute="leading" secondItem="gOr-0w-3S4" secondAttribute="trailing" constant="16" id="igf-O3-pg0"/>
+                            <constraint firstItem="hDo-JF-Dqm" firstAttribute="bottom" secondItem="gOr-0w-3S4" secondAttribute="bottom" id="nej-dX-zUZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0xL-1J-dBt"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="imageViewLogo" destination="D8m-Ia-8az" id="wWp-kG-66R"/>
+                        <outlet property="labelHeading" destination="hDo-JF-Dqm" id="w7H-30-3QH"/>
+                        <outlet property="viewImageOuter" destination="gOr-0w-3S4" id="ADf-ji-8aR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wf1-RP-Ms2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2454" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="klC-Ha-0mV">

@@ -38,6 +38,26 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         viewActivity.layer.cornerRadius = 10
         viewActivity.clipsToBounds = true
         view.bringSubviewToFront(viewActivity)
+        
+        // Navigation & Viewcontroller
+        let VCArray:Array = (self.navigationController?.viewControllers)!
+        var arrVC = VCArray
+        print("Before Delete VC =",arrVC)
+        
+        for i in 0..<VCArray.count
+        {
+            if VCArray[i].isKind(of: self.classForCoder)
+            {
+                break
+            }
+            else
+            {
+                arrVC.removeFirst()
+            }
+        }
+        
+        print("After Delete VC =",arrVC)
+        self.navigationController?.viewControllers = arrVC
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -120,7 +140,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // self.setGradientLayer(gradientLayer: gradientLayer, firstColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1), secondColor: "429ED8" as AnyObject)
         
-        self.setGradientLayer(gradientLayer: gradientLayer, firstColor: "FF9D2D" as AnyObject, secondColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
+        self.setGradientLayer(gradientLayer: gradientLayer, firstColor: "429ED8" as AnyObject, secondColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -160,6 +180,15 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.imageViewLink.image = UIImage.init(named: "logoMyBliss")
         }
         
+        if let title = dictObject["title"] as? String
+        {
+            cell.labelTitle.text = title
+        }
+        else
+        {
+            cell.labelTitle.text = "TBA"
+        }
+        
         cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
         
         UIView.animate(withDuration: 0.3, animations: {
@@ -189,6 +218,17 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 150
     }
     */
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let dictObject = arrayFetchResult[indexPath.row] as! NSDictionary
+        
+        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        detailVC.dictFetchResult = dictObject
+        
+        self.navigationController?.push(VC: detailVC)
+    }
     
     func addShadowToHeaderContent()
     {

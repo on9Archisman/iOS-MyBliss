@@ -18,6 +18,7 @@ class ListTableViewCell: UITableViewCell
     @IBOutlet weak var labelDateDay: UILabel!
     @IBOutlet weak var imageViewLink: UIImageView!
     @IBOutlet weak var viewImageLinkShadow: UIView!
+    @IBOutlet weak var labelTitle: UILabel!
     
     override func awakeFromNib()
     {
