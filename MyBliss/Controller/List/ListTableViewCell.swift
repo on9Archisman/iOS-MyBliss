@@ -16,6 +16,8 @@ class ListTableViewCell: UITableViewCell
     @IBOutlet weak var labelDateMonth: UILabel!
     @IBOutlet weak var labelDateYear: UILabel!
     @IBOutlet weak var labelDateDay: UILabel!
+    @IBOutlet weak var imageViewLink: UIImageView!
+    @IBOutlet weak var viewImageLinkShadow: UIView!
     
     override func awakeFromNib()
     {
@@ -37,6 +39,14 @@ class ListTableViewCell: UITableViewCell
         viewDateShadow.layer.shadowRadius = 4
         viewDateShadow.layer.shadowColor = UIColor.black.cgColor
         viewDateShadow.layer.masksToBounds = false
+        
+        imageViewLink.layer.cornerRadius = 5
+        imageViewLink.layer.masksToBounds = true
+        
+        viewImageLinkShadow.layer.cornerRadius = 5
+        viewImageLinkShadow.layer.masksToBounds = true
+        viewImageLinkShadow.layer.borderWidth = 1
+        viewImageLinkShadow.layer.borderColor = UIColor.white.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool)

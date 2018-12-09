@@ -221,11 +221,29 @@ MyBliss. Inc.
                                                                 <constraint firstAttribute="height" constant="85" id="jbM-ZZ-0yd"/>
                                                             </constraints>
                                                         </view>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vkk-Ch-pio">
+                                                            <rect key="frame" x="215" y="15" width="95" height="85"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="85" id="5fw-Ae-0mr"/>
+                                                                <constraint firstAttribute="width" constant="95" id="vuo-TM-pTs"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBZ-qd-4ro">
+                                                            <rect key="frame" x="215" y="15" width="95" height="85"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="gBZ-qd-4ro" firstAttribute="bottom" secondItem="Vkk-Ch-pio" secondAttribute="bottom" id="3h7-BY-2tI"/>
+                                                        <constraint firstItem="Vkk-Ch-pio" firstAttribute="centerY" secondItem="bD0-uY-EwX" secondAttribute="centerY" id="3lC-8Q-0KN"/>
+                                                        <constraint firstItem="gBZ-qd-4ro" firstAttribute="trailing" secondItem="Vkk-Ch-pio" secondAttribute="trailing" id="N2M-6m-AdK"/>
                                                         <constraint firstItem="qZy-cj-SSU" firstAttribute="leading" secondItem="bD0-uY-EwX" secondAttribute="leading" constant="10" id="Xg3-6a-F3m"/>
+                                                        <constraint firstItem="gBZ-qd-4ro" firstAttribute="leading" secondItem="Vkk-Ch-pio" secondAttribute="leading" id="Zbn-ZC-GPr"/>
                                                         <constraint firstItem="qZy-cj-SSU" firstAttribute="centerY" secondItem="bD0-uY-EwX" secondAttribute="centerY" id="dvD-jb-vaI"/>
+                                                        <constraint firstItem="gBZ-qd-4ro" firstAttribute="top" secondItem="Vkk-Ch-pio" secondAttribute="top" id="mGI-hJ-j9w"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Vkk-Ch-pio" secondAttribute="trailing" constant="10" id="nif-si-JGb"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -238,11 +256,13 @@ MyBliss. Inc.
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="imageViewLink" destination="Vkk-Ch-pio" id="1Kn-xx-J9U"/>
                                             <outlet property="labelDateDay" destination="7no-x4-8Ug" id="u6j-5T-8bp"/>
                                             <outlet property="labelDateMonth" destination="LMJ-eU-liQ" id="nvh-ht-3C3"/>
                                             <outlet property="labelDateYear" destination="heT-0a-Z9A" id="1i4-Zz-3oc"/>
                                             <outlet property="viewDate" destination="opt-pA-SYk" id="Ila-Hc-giB"/>
                                             <outlet property="viewDateShadow" destination="qZy-cj-SSU" id="sIl-nX-qon"/>
+                                            <outlet property="viewImageLinkShadow" destination="gBZ-qd-4ro" id="oxG-gK-13N"/>
                                             <outlet property="viewOuter" destination="bD0-uY-EwX" id="vDr-JJ-otD"/>
                                         </connections>
                                     </tableViewCell>

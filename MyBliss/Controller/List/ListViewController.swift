@@ -151,6 +151,15 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.labelDateYear.text = "TBA"
         }
         
+        if let smallImageUrl = dictObject["smallImageUrl"] as? String
+        {
+            cell.imageViewLink.imageFromServerURL(smallImageUrl, placeHolder: UIImage.init(named: "logoMyBliss"))
+        }
+        else
+        {
+            cell.imageViewLink.image = UIImage.init(named: "logoMyBliss")
+        }
+        
         cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
         
         UIView.animate(withDuration: 0.3, animations: {

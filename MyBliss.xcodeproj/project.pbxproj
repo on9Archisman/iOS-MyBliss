@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03145E1821BD5B5500D7A0EB /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03145E1721BD5B5500D7A0EB /* UIImageView+Extension.swift */; };
 		032D174821BBBA2100710A6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D174721BBBA2100710A6F /* AppDelegate.swift */; };
 		032D174A21BBBA2100710A6F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032D174921BBBA2100710A6F /* LaunchViewController.swift */; };
 		032D174D21BBBA2100710A6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032D174B21BBBA2100710A6F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03145E1721BD5B5500D7A0EB /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		032D174421BBBA2100710A6F /* MyBliss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBliss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		032D174721BBBA2100710A6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		032D174921BBBA2100710A6F /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				032D176221BBD64700710A6F /* UIViewController+Extension.swift */,
 				032D176421BBD68400710A6F /* UINavigationController+Extension.swift */,
+				03145E1721BD5B5500D7A0EB /* UIImageView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				032D176321BBD64700710A6F /* UIViewController+Extension.swift in Sources */,
 				03E29EAA21BC28DF00995BE8 /* ListTableViewCell.swift in Sources */,
 				032D176A21BBD72E00710A6F /* Singleton.swift in Sources */,
+				03145E1821BD5B5500D7A0EB /* UIImageView+Extension.swift in Sources */,
 				032D174A21BBBA2100710A6F /* LaunchViewController.swift in Sources */,
 				032D176521BBD68400710A6F /* UINavigationController+Extension.swift in Sources */,
 				032D174821BBBA2100710A6F /* AppDelegate.swift in Sources */,
