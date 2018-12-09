@@ -17,6 +17,8 @@ class ListViewController: UIViewController
     
     var gradientLayer = CAGradientLayer()
     
+    var arrayFetchResult: NSArray?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -50,7 +52,7 @@ class ListViewController: UIViewController
         
         viewActivity.isHidden = false
         
-        Helper.callAPIWithDataTask(param: "v1/dummy?page=1", method: "get", data: nil) { (flag, result) in
+        Helper.callAPIWithDataTask(param: "api/v1/dummy?page=1", method: "get", data: nil) { (flag, result) in
             
             print("Response Flag =",flag)
             
@@ -60,11 +62,15 @@ class ListViewController: UIViewController
             
             if (flag)
             {
-                sel
+                let dictFetchResult = result as! NSDictionary
+                
+                print("Result =",dictFetchResult)
             }
             else
             {
-                
+                DispatchQueue.main.async {
+                    self.actionSheetAsAlert(message: "Something went wrong, Please try again")
+                }
             }
         }
     }

@@ -45,5 +45,29 @@ extension UIViewController
         // self.view.layer.addSublayer(gradientLayer)
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
+    
+    func actionSheetAsAlert(message: String)
+    {
+        let attributedStringTitle = NSAttributedString(string: Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String, attributes: [
+            NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16),
+            NSAttributedString.Key.foregroundColor : UIColor.black
+            ])
+        
+        let attributedStringMessage = NSAttributedString(string: message, attributes: [
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 15),
+            NSAttributedString.Key.foregroundColor : UIColor.black
+            ])
+        
+        let actionSheet = UIAlertController(title: "", message: "",  preferredStyle: .actionSheet)
+        
+        actionSheet.setValue(attributedStringTitle, forKey: "attributedTitle")
+        actionSheet.setValue(attributedStringMessage, forKey: "attributedMessage")
+        
+        let actionButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        actionSheet.addAction(actionButton)
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
 }
 
