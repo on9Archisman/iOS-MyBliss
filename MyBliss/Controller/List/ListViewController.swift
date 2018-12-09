@@ -49,6 +49,24 @@ class ListViewController: UIViewController
         super.viewDidAppear(animated)
         
         viewActivity.isHidden = false
+        
+        Helper.callAPIWithDataTask(param: "v1/dummy?page=1", method: "get", data: nil) { (flag, result) in
+            
+            print("Response Flag =",flag)
+            
+            DispatchQueue.main.async {
+                self.viewActivity.isHidden = true
+            }
+            
+            if (flag)
+            {
+                sel
+            }
+            else
+            {
+                
+            }
+        }
     }
     
     override func viewWillLayoutSubviews()

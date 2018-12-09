@@ -36,7 +36,7 @@ class Helper
         )
     }
     
-    func callAPIWithDataTask(param: String, method: String, data: NSDictionary, completionHandler: @escaping (Bool, AnyObject?) -> ())
+    static func callAPIWithDataTask(param: String, method: String, data: NSDictionary?, completionHandler: @escaping (Bool, AnyObject?) -> ())
     {
         let urlString: String = "\(baseURL+param)"
         print("Step to URL 1 => ", urlString)
@@ -54,15 +54,18 @@ class Helper
         {
             request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
             
-            do
+            if (data != nil)
             {
-                let httpBody = try JSONSerialization.data(withJSONObject: data, options: [])
-                
-                request.httpBody = httpBody
-            }
-            catch let error as NSError
-            {
-                print(error.localizedDescription)
+                do
+                {
+                    let httpBody = try JSONSerialization.data(withJSONObject: data!, options: [])
+                    
+                    request.httpBody = httpBody
+                }
+                catch let error as NSError
+                {
+                    print(error.localizedDescription)
+                }
             }
         }
         
