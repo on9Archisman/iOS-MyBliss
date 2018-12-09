@@ -132,6 +132,39 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         let cell: ListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "REUSE") as! ListTableViewCell
         
+        let dictObject = arrayFetchResult[indexPath.row] as! NSDictionary
+        
+        if let date = dictObject["date"] as? String
+        {
+            let arrayDate = date.components(separatedBy: "-")
+            
+            cell.labelDateDay.text = arrayDate[2]
+            
+            cell.labelDateMonth.text = DateFormatter().shortMonthSymbols[Int(arrayDate[1])!-1]
+            
+            cell.labelDateYear.text = arrayDate[0]
+        }
+        else
+        {
+            cell.labelDateDay.text = "TBA"
+            cell.labelDateMonth.text = "TBA"
+            cell.labelDateYear.text = "TBA"
+        }
+        
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+            
+        },completion: { finished in
+            
+            UIView.animate(withDuration: 0.1, animations: {
+                
+                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+            })
+        })
+        
         return cell
     }
     
