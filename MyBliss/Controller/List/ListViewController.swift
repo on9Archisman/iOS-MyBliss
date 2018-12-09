@@ -8,16 +8,17 @@
 
 import UIKit
 
-class ListViewController: UIViewController
+class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     @IBOutlet weak var viewImageOuter: UIView!
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var viewActivity: UIView!
+    @IBOutlet weak var tableViewList: UITableView!
     
     var gradientLayer = CAGradientLayer()
     
-    var arrayFetchResult: NSArray?
+    var arrayFetchResult = NSArray()
     
     override func viewDidLoad()
     {
@@ -44,6 +45,7 @@ class ListViewController: UIViewController
         super.viewWillAppear(animated)
         
         viewActivity.isHidden = true
+        tableViewList.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -62,9 +64,44 @@ class ListViewController: UIViewController
             
             if (flag)
             {
-                let dictFetchResult = result as! NSDictionary
+                let dictJSON = result as! NSDictionary
                 
-                print("Result =",dictFetchResult)
+                print("Result =",dictJSON)
+                
+                if let data = dictJSON["data"] as? NSDictionary
+                {
+                    if let episodes = data["episodes"] as? NSArray
+                    {
+                        self.arrayFetchResult = episodes
+                        
+                        if (self.arrayFetchResult.count > 0)
+                        {
+                            DispatchQueue.main.async {
+                                
+                                self.tableViewList.isHidden = false
+                                self.tableViewList.reloadData()
+                            }
+                        }
+                        else
+                        {
+                            DispatchQueue.main.async {
+                                self.actionSheetAsAlert(message: "No records available, Please try again")
+                            }
+                        }
+                    }
+                    else
+                    {
+                        DispatchQueue.main.async {
+                            self.actionSheetAsAlert(message: "No records available, Please try again")
+                        }
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async {
+                        self.actionSheetAsAlert(message: "No records available, Please try again")
+                    }
+                }
             }
             else
             {
@@ -81,8 +118,35 @@ class ListViewController: UIViewController
         
         gradientLayer.frame = view.layer.bounds
         
-        self.setGradientLayer(gradientLayer: gradientLayer, firstColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1), secondColor: "429ED8" as AnyObject)
+        // self.setGradientLayer(gradientLayer: gradientLayer, firstColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1), secondColor: "429ED8" as AnyObject)
+        
+        self.setGradientLayer(gradientLayer: gradientLayer, firstColor: "FF9D2D" as AnyObject, secondColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return arrayFetchResult.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell: ListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "REUSE") as! ListTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 115
+        // return UITableView.automaticDimension
+    }
+    
+    /*
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 150
+    }
+    */
     
     func addShadowToHeaderContent()
     {
