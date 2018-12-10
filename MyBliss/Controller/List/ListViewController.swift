@@ -18,7 +18,11 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var gradientLayer = CAGradientLayer()
     
+    let refreshControl = UIRefreshControl()
+    
     var arrayFetchResult = NSArray()
+    
+    var pageNumber = Int()
     
     override func viewDidLoad()
     {
@@ -58,14 +62,30 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         print("After Delete VC =",arrVC)
         self.navigationController?.viewControllers = arrVC
+        
+        tableViewList.tableFooterView = UIView()
+        
+        refreshControl.tintColor = UIColor.white
+        refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
+        if #available(iOS 10.0, *)
+        {
+            tableViewList.refreshControl = refreshControl
+        }
+        else
+        {
+            // Fallback on earlier versions
+            tableViewList.addSubview(refreshControl)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         
+        pageNumber = 1
+        
         viewActivity.isHidden = true
-        tableViewList.isHidden = true
+        view.isUserInteractionEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -74,12 +94,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         viewActivity.isHidden = false
         
-        Helper.callAPIWithDataTask(param: "api/v1/dummy?page=1", method: "get", data: nil) { (flag, result) in
+        Helper.callAPIWithDataTask(param: "api/v1/dummy?page=\(pageNumber)", method: "get", data: nil) { (flag, result) in
             
             print("Response Flag =",flag)
             
             DispatchQueue.main.async {
                 self.viewActivity.isHidden = true
+                self.view.isUserInteractionEnabled = true
             }
             
             if (flag)
@@ -92,13 +113,32 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 {
                     if let episodes = data["episodes"] as? NSArray
                     {
-                        self.arrayFetchResult = episodes
+                        if (self.pageNumber == 1)
+                        {
+                            self.arrayFetchResult = episodes
+                        }
+                        else
+                        {
+                            if (episodes.count > 0)
+                            {
+                                let temp: NSMutableArray = self.arrayFetchResult.mutableCopy() as! NSMutableArray
+                                temp.addObjects(from: episodes as! [Any])
+                                self.arrayFetchResult = temp
+                            }
+                            else
+                            {
+                                self.pageNumber = self.pageNumber - 1
+                                
+                                DispatchQueue.main.async {
+                                    self.actionSheetAsAlert(message: "No records available, All are fetched")
+                                }
+                            }
+                        }
                         
                         if (self.arrayFetchResult.count > 0)
                         {
                             DispatchQueue.main.async {
                                 
-                                self.tableViewList.isHidden = false
                                 self.tableViewList.reloadData()
                             }
                         }
@@ -141,6 +181,19 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // self.setGradientLayer(gradientLayer: gradientLayer, firstColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1), secondColor: "429ED8" as AnyObject)
         
         self.setGradientLayer(gradientLayer: gradientLayer, firstColor: "429ED8" as AnyObject, secondColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
+    }
+    
+    @objc func refreshPage()
+    {
+        // Code to refresh table view
+        refreshControl.endRefreshing()
+        
+        pageNumber = 1
+        
+        viewActivity.isHidden = true
+        view.isUserInteractionEnabled = false
+        
+        viewDidAppear(true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -228,6 +281,19 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         detailVC.dictFetchResult = dictObject
         
         self.navigationController?.push(VC: detailVC)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
+    {
+        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
+        {
+            pageNumber = pageNumber + 1
+            
+            viewActivity.isHidden = true
+            view.isUserInteractionEnabled = false
+            
+            viewDidAppear(true)
+        }
     }
     
     func addShadowToHeaderContent()

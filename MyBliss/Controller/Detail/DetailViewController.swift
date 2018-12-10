@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController
 {
+    @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var viewImageOuter: UIView!
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var labelHeading: UILabel!
@@ -35,6 +36,15 @@ class DetailViewController: UIViewController
         else
         {
             labelHeading.text = "TBA"
+        }
+        
+        if let imageUrl = dictFetchResult["imageUrl"] as? String
+        {
+            imageBackground.imageFromServerURL(imageUrl, placeHolder: UIImage.init(named: "logoMyBliss"))
+        }
+        else
+        {
+            imageBackground.image = UIImage.init(named: "logoMyBliss")
         }
     }
     

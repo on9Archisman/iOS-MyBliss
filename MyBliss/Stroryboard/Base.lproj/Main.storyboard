@@ -329,6 +329,10 @@ MyBliss. Inc.
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Gf-El-4Dg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-0w-3S4">
                                 <rect key="frame" x="16" y="36" width="50" height="50"/>
                                 <subviews>
@@ -358,17 +362,22 @@ MyBliss. Inc.
                         <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0xL-1J-dBt" firstAttribute="trailing" secondItem="hDo-JF-Dqm" secondAttribute="trailing" constant="16" id="59H-G5-0Id"/>
+                            <constraint firstItem="7Gf-El-4Dg" firstAttribute="top" secondItem="ZJS-FN-qcR" secondAttribute="top" id="73s-rO-Zal"/>
                             <constraint firstItem="gOr-0w-3S4" firstAttribute="leading" secondItem="0xL-1J-dBt" secondAttribute="leading" constant="16" id="T9k-cZ-JYo"/>
+                            <constraint firstItem="7Gf-El-4Dg" firstAttribute="leading" secondItem="ZJS-FN-qcR" secondAttribute="leading" id="Y7A-on-SpB"/>
                             <constraint firstItem="gOr-0w-3S4" firstAttribute="top" secondItem="0xL-1J-dBt" secondAttribute="top" constant="16" id="d9W-Tv-L3T"/>
                             <constraint firstItem="hDo-JF-Dqm" firstAttribute="top" secondItem="gOr-0w-3S4" secondAttribute="top" id="fwv-rk-rq4"/>
                             <constraint firstItem="hDo-JF-Dqm" firstAttribute="leading" secondItem="gOr-0w-3S4" secondAttribute="trailing" constant="16" id="igf-O3-pg0"/>
                             <constraint firstItem="hDo-JF-Dqm" firstAttribute="bottom" secondItem="gOr-0w-3S4" secondAttribute="bottom" id="nej-dX-zUZ"/>
+                            <constraint firstAttribute="bottom" secondItem="7Gf-El-4Dg" secondAttribute="bottom" id="vtX-yR-ITF"/>
+                            <constraint firstAttribute="trailing" secondItem="7Gf-El-4Dg" secondAttribute="trailing" id="zQa-MF-zWx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0xL-1J-dBt"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="imageBackground" destination="7Gf-El-4Dg" id="HXw-8u-D4W"/>
                         <outlet property="imageViewLogo" destination="D8m-Ia-8az" id="wWp-kG-66R"/>
                         <outlet property="labelHeading" destination="hDo-JF-Dqm" id="w7H-30-3QH"/>
                         <outlet property="viewImageOuter" destination="gOr-0w-3S4" id="ADf-ji-8aR"/>
