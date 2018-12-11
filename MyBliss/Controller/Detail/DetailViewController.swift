@@ -14,6 +14,9 @@ class DetailViewController: UIViewController
     @IBOutlet weak var viewImageOuter: UIView!
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var labelHeading: UILabel!
+    @IBOutlet weak var scrollViewDetail: UIScrollView!
+    @IBOutlet weak var scrollViewImageContent: UIImageView!
+    @IBOutlet weak var scrollViewLabelContent: UILabel!
     
     var gradientLayer = CAGradientLayer()
     
@@ -41,10 +44,26 @@ class DetailViewController: UIViewController
         if let imageUrl = dictFetchResult["imageUrl"] as? String
         {
             imageBackground.imageFromServerURL(imageUrl, placeHolder: UIImage.init(named: "logoMyBliss"))
+            scrollViewImageContent.imageFromServerURL(imageUrl, placeHolder: UIImage.init(named: "logoMyBliss"))
         }
         else
         {
             imageBackground.image = UIImage.init(named: "logoMyBliss")
+            scrollViewImageContent.image = UIImage.init(named: "logoMyBliss")
+        }
+        
+        scrollViewImageContent.layer.cornerRadius = 10
+        scrollViewImageContent.layer.borderWidth = 0.5
+        scrollViewImageContent.layer.borderColor = UIColor.white.cgColor
+        scrollViewImageContent.layer.masksToBounds = true
+        
+        if let description = dictFetchResult["description"] as? String
+        {
+            scrollViewLabelContent.text = description
+        }
+        else
+        {
+            scrollViewLabelContent.text = ""
         }
     }
     

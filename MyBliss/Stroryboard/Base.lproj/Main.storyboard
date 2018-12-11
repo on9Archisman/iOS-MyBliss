@@ -350,6 +350,10 @@ MyBliss. Inc.
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSv-eS-MSH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.69777397260273977" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOr-0w-3S4">
                                 <rect key="frame" x="16" y="36" width="50" height="50"/>
                                 <subviews>
@@ -375,14 +379,65 @@ MyBliss. Inc.
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-MO-fxo">
+                                <rect key="frame" x="0.0" y="102" width="320" height="466"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCu-Wh-mjQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="221"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kps-kN-402">
+                                                <rect key="frame" x="48" y="16" width="224" height="151.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kps-kN-402" secondAttribute="height" multiplier="96:65" id="tOB-Di-ipm"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L36-ih-CmG">
+                                                <rect key="frame" x="16" y="183.5" width="288" height="21.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="kps-kN-402" firstAttribute="width" secondItem="sCu-Wh-mjQ" secondAttribute="width" multiplier="0.7" id="FdG-XP-CNA"/>
+                                            <constraint firstAttribute="trailing" secondItem="L36-ih-CmG" secondAttribute="trailing" constant="16" id="WFQ-vS-G2R"/>
+                                            <constraint firstAttribute="bottom" secondItem="L36-ih-CmG" secondAttribute="bottom" constant="16" id="a75-Nj-7UL"/>
+                                            <constraint firstItem="L36-ih-CmG" firstAttribute="top" secondItem="kps-kN-402" secondAttribute="bottom" constant="16" id="clv-F9-K1Q"/>
+                                            <constraint firstItem="kps-kN-402" firstAttribute="top" secondItem="sCu-Wh-mjQ" secondAttribute="top" constant="16" id="jIs-QT-d9y"/>
+                                            <constraint firstItem="kps-kN-402" firstAttribute="centerX" secondItem="sCu-Wh-mjQ" secondAttribute="centerX" id="lj2-ME-jAW"/>
+                                            <constraint firstItem="L36-ih-CmG" firstAttribute="leading" secondItem="sCu-Wh-mjQ" secondAttribute="leading" constant="16" id="p4x-bm-msW"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="sCu-Wh-mjQ" firstAttribute="height" secondItem="JMz-MO-fxo" secondAttribute="height" priority="250" id="8yD-6W-her"/>
+                                    <constraint firstItem="sCu-Wh-mjQ" firstAttribute="leading" secondItem="JMz-MO-fxo" secondAttribute="leading" id="Fck-9y-4ja"/>
+                                    <constraint firstItem="sCu-Wh-mjQ" firstAttribute="top" secondItem="JMz-MO-fxo" secondAttribute="top" id="JoG-V8-fm0"/>
+                                    <constraint firstItem="sCu-Wh-mjQ" firstAttribute="width" secondItem="JMz-MO-fxo" secondAttribute="width" id="OyN-Fk-KeN"/>
+                                    <constraint firstAttribute="trailing" secondItem="sCu-Wh-mjQ" secondAttribute="trailing" id="hxz-ZG-Vvn"/>
+                                    <constraint firstAttribute="bottom" secondItem="sCu-Wh-mjQ" secondAttribute="bottom" id="kvU-nF-xaB"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0xL-1J-dBt" firstAttribute="trailing" secondItem="hDo-JF-Dqm" secondAttribute="trailing" constant="16" id="59H-G5-0Id"/>
                             <constraint firstItem="7Gf-El-4Dg" firstAttribute="top" secondItem="ZJS-FN-qcR" secondAttribute="top" id="73s-rO-Zal"/>
+                            <constraint firstItem="JMz-MO-fxo" firstAttribute="trailing" secondItem="0xL-1J-dBt" secondAttribute="trailing" id="9XE-UG-uTq"/>
+                            <constraint firstItem="JMz-MO-fxo" firstAttribute="bottom" secondItem="0xL-1J-dBt" secondAttribute="bottom" id="Lhg-K1-d1h"/>
                             <constraint firstItem="gOr-0w-3S4" firstAttribute="leading" secondItem="0xL-1J-dBt" secondAttribute="leading" constant="16" id="T9k-cZ-JYo"/>
+                            <constraint firstAttribute="trailing" secondItem="gSv-eS-MSH" secondAttribute="trailing" id="TNL-Jt-dbf"/>
+                            <constraint firstItem="gSv-eS-MSH" firstAttribute="leading" secondItem="ZJS-FN-qcR" secondAttribute="leading" id="WJe-hs-jfx"/>
                             <constraint firstItem="7Gf-El-4Dg" firstAttribute="leading" secondItem="ZJS-FN-qcR" secondAttribute="leading" id="Y7A-on-SpB"/>
+                            <constraint firstItem="gSv-eS-MSH" firstAttribute="top" secondItem="ZJS-FN-qcR" secondAttribute="top" id="Ycj-0l-hNr"/>
+                            <constraint firstItem="JMz-MO-fxo" firstAttribute="leading" secondItem="0xL-1J-dBt" secondAttribute="leading" id="c5J-zK-hbT"/>
+                            <constraint firstAttribute="bottom" secondItem="gSv-eS-MSH" secondAttribute="bottom" id="ckB-Fd-q8F"/>
                             <constraint firstItem="gOr-0w-3S4" firstAttribute="top" secondItem="0xL-1J-dBt" secondAttribute="top" constant="16" id="d9W-Tv-L3T"/>
+                            <constraint firstItem="JMz-MO-fxo" firstAttribute="top" secondItem="gOr-0w-3S4" secondAttribute="bottom" constant="16" id="fja-8c-L3v"/>
                             <constraint firstItem="hDo-JF-Dqm" firstAttribute="top" secondItem="gOr-0w-3S4" secondAttribute="top" id="fwv-rk-rq4"/>
                             <constraint firstItem="hDo-JF-Dqm" firstAttribute="leading" secondItem="gOr-0w-3S4" secondAttribute="trailing" constant="16" id="igf-O3-pg0"/>
                             <constraint firstItem="hDo-JF-Dqm" firstAttribute="bottom" secondItem="gOr-0w-3S4" secondAttribute="bottom" id="nej-dX-zUZ"/>
@@ -397,12 +452,15 @@ MyBliss. Inc.
                         <outlet property="imageBackground" destination="7Gf-El-4Dg" id="HXw-8u-D4W"/>
                         <outlet property="imageViewLogo" destination="D8m-Ia-8az" id="wWp-kG-66R"/>
                         <outlet property="labelHeading" destination="hDo-JF-Dqm" id="w7H-30-3QH"/>
+                        <outlet property="scrollViewDetail" destination="JMz-MO-fxo" id="Ziw-zo-sPq"/>
+                        <outlet property="scrollViewImageContent" destination="kps-kN-402" id="2Zb-IA-FDc"/>
+                        <outlet property="scrollViewLabelContent" destination="L36-ih-CmG" id="FAf-WB-Da5"/>
                         <outlet property="viewImageOuter" destination="gOr-0w-3S4" id="ADf-ji-8aR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wf1-RP-Ms2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2454" y="132"/>
+            <point key="canvasLocation" x="2452.5" y="130.98591549295776"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="klC-Ha-0mV">
