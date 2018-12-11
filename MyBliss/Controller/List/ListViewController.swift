@@ -88,6 +88,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             // Fallback on earlier versions
             tableViewList.addSubview(refreshControl)
         }
+        
+        let textFieldInsideSearchBar = searchBarList.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = UIColor.white
+        textFieldInsideSearchBar?.setValue(UIColor.white, forKeyPath: "_placeholderLabel.textColor")
+        let textFieldInsideSearchBarImage: UIImageView = textFieldInsideSearchBar?.leftView as! UIImageView
+        textFieldInsideSearchBarImage.image = textFieldInsideSearchBarImage.image?.withRenderingMode(.alwaysTemplate)
+        textFieldInsideSearchBarImage.tintColor = UIColor.white
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -153,6 +160,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
                             DispatchQueue.main.async {
                                 
                                 self.tableViewList.reloadData()
+                                self.tableViewList.layoutIfNeeded()
                             }
                         }
                         else
@@ -243,6 +251,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         {
             isSearch = false
             tableViewList.reloadData()
+            tableViewList.layoutIfNeeded()
         }
         else
         {
@@ -263,6 +272,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             isSearch = true
             tableViewList.reloadData()
+            tableViewList.layoutIfNeeded()
         }
     }
     
