@@ -15,6 +15,7 @@ class LaunchViewController: UIViewController
     
     var centerPoint: CGPoint?
     
+    // MARK: ViewController LifeCycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -54,6 +55,7 @@ class LaunchViewController: UIViewController
         }
     }
     
+    // MARK: Miscellaneous
     @objc func moveToListVC()
     {
         let listVC = self.storyboard?.instantiateViewController(withIdentifier: "ListViewController") as! ListViewController

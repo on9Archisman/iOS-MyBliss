@@ -13,6 +13,7 @@ let imageCache = NSCache<NSString, UIImage>()
 
 extension UIImageView
 {
+    // MARK: DOWNLOAD IMAGE FROM SERVER WITH CACHE
     func imageFromServerURL(_ URLString: String, placeHolder: UIImage?)
     {
         self.image = nil

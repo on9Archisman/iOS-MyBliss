@@ -11,6 +11,7 @@ import UIKit
 
 extension UIViewController
 {
+    // MARK: GRADIENT
     func setGradientLayer(gradientLayer: CAGradientLayer, firstColor: AnyObject, secondColor: AnyObject)
     {
         // let gradientLayer = CAGradientLayer()
@@ -46,6 +47,7 @@ extension UIViewController
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
     
+    // MARK: MESSAGE
     func actionSheetAsAlert(message: String)
     {
         let attributedStringTitle = NSAttributedString(string: Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as! String, attributes: [

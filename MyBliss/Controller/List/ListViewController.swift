@@ -36,12 +36,14 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var skipPagination: Bool = false
     
+    // MARK: ViewController LifeCycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.clear
         
+        // Heading Image
         addShadowToHeaderContent()
         
         // Date
@@ -51,6 +53,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let result = formatter.string(from: date)
         labelDate.text = result
         
+        // Loader
         viewActivity.layer.cornerRadius = 10
         viewActivity.clipsToBounds = true
         view.bringSubviewToFront(viewActivity)
@@ -77,6 +80,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableViewList.tableFooterView = UIView()
         
+        // Refresh Control
         refreshControl.tintColor = UIColor.white
         refreshControl.addTarget(self, action: #selector(refreshPage), for: .valueChanged)
         if #available(iOS 10.0, *)
@@ -89,6 +93,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             tableViewList.addSubview(refreshControl)
         }
         
+        // Search Bar
         let textFieldInsideSearchBar = searchBarList.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor.white
         textFieldInsideSearchBar?.setValue(UIColor.white, forKeyPath: "_placeholderLabel.textColor")
@@ -127,7 +132,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             {
                 let dictJSON = result as! NSDictionary
                 
-                // print("Result =",dictJSON)
+                print("Result =",dictJSON)
                 
                 if let data = dictJSON["data"] as? NSDictionary
                 {
@@ -219,7 +224,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         viewDidAppear(true)
     }
     
-    // MARK: UISearchbar delegate
+    // MARK: UISearchbar Delegate
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
     {
         // isSearch = true
@@ -276,6 +281,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    // MARK: UITableView Delegate
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if (isSearch)
@@ -357,8 +363,8 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 115
         // return UITableView.automaticDimension
+        return 115
     }
     
     /*
@@ -388,6 +394,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationController?.push(VC: detailVC)
     }
     
+    // MARK: Pagination
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
     {
         if (skipPagination == false )
@@ -411,6 +418,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    // MARK: Miscellaneous
     func addShadowToHeaderContent()
     {
         imageViewLogo.layer.cornerRadius = imageViewLogo.bounds.height / 2

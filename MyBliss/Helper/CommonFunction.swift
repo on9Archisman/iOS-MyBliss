@@ -11,6 +11,7 @@ import UIKit
 
 class Helper
 {
+    // MARK: HEX CODE TO UICOLOR
     static func hexStringToUIColor(HexCode: String) -> UIColor
     {
         var cString:String = HexCode.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -36,6 +37,7 @@ class Helper
         )
     }
     
+    // MARK: API CALL WITH GET/POST
     static func callAPIWithDataTask(param: String, method: String, data: NSDictionary?, completionHandler: @escaping (Bool, AnyObject?) -> ())
     {
         let urlString: String = "\(baseURL+param)"

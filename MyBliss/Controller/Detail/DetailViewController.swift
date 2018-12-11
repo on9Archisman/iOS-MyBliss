@@ -24,14 +24,17 @@ class DetailViewController: UIViewController
     
     var dictFetchResult = NSDictionary()
     
+    // MARK: ViewController LifeCycle
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.clear
         
+        // Heading Image
         addShadowToHeaderContent()
         
+        // Set Content
         if let title = dictFetchResult["title"] as? String
         {
             labelHeading.text = title
@@ -93,6 +96,13 @@ class DetailViewController: UIViewController
         self.setGradientLayer(gradientLayer: gradientLayer, firstColor: "FF9D2D" as AnyObject, secondColor: UIColor.init(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
     }
     
+    // MARK: Status Bar
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        return .lightContent
+    }
+    
+    // MARK: Miscellaneous
     @objc func actionSwipeGesture(sender: UISwipeGestureRecognizer)
     {
         self.navigationController?.pop()
