@@ -22,8 +22,19 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let refreshControl = UIRefreshControl()
     
     var arrayFetchResult = NSArray()
+    var arrayFetchResultFilter = NSMutableArray()
     
     var pageNumber = Int()
+    
+    var isSearch: Bool = false
+    {
+        didSet
+        {
+            print("The value of myProperty changed from \(oldValue) to \(isSearch)")
+        }
+    }
+    
+    var skipPagination: Bool = false
     
     override func viewDidLoad()
     {
@@ -93,6 +104,9 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     {
         super.viewDidAppear(animated)
         
+        searchBarList.text = ""
+        isSearch = false
+        
         Helper.callAPIWithDataTask(param: "api/v1/dummy?page=\(pageNumber)", method: "get", data: nil) { (flag, result) in
             
             print("Response Flag =",flag)
@@ -106,7 +120,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
             {
                 let dictJSON = result as! NSDictionary
                 
-                print("Result =",dictJSON)
+                // print("Result =",dictJSON)
                 
                 if let data = dictJSON["data"] as? NSDictionary
                 {
@@ -192,19 +206,92 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         viewActivity.isHidden = false
         view.isUserInteractionEnabled = false
         
+        skipPagination = true
+        
         viewDidAppear(true)
+    }
+    
+    // MARK: UISearchbar delegate
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
+    {
+        // isSearch = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+        // isSearch = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+        // isSearch = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+        // isSearch = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        print("Text Count =",searchText.count)
+        
+        if (searchText.count == 0)
+        {
+            isSearch = false
+            tableViewList.reloadData()
+        }
+        else
+        {
+            arrayFetchResultFilter.removeAllObjects()
+            
+            for i in 0 ..< arrayFetchResult.count
+            {
+                let dictObject = arrayFetchResult[i] as! NSDictionary
+                
+                if let title = dictObject["title"] as? String
+                {
+                    if title.lowercased().range(of: searchText.lowercased()) != nil
+                    {
+                        arrayFetchResultFilter.add(dictObject)
+                    }
+                }
+            }
+            
+            isSearch = true
+            tableViewList.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return arrayFetchResult.count
+        if (isSearch)
+        {
+            return arrayFetchResultFilter.count
+        }
+        else
+        {
+            return arrayFetchResult.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell: ListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "REUSE") as! ListTableViewCell
         
-        let dictObject = arrayFetchResult[indexPath.row] as! NSDictionary
+        var dictObject = NSDictionary()
+        
+        if (isSearch)
+        {
+            dictObject = arrayFetchResultFilter[indexPath.row] as! NSDictionary
+        }
+        else
+        {
+            dictObject = arrayFetchResult[indexPath.row] as! NSDictionary
+        }
         
         if let date = dictObject["date"] as? String
         {
@@ -273,7 +360,16 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let dictObject = arrayFetchResult[indexPath.row] as! NSDictionary
+        var dictObject = NSDictionary()
+        
+        if (isSearch)
+        {
+            dictObject = arrayFetchResultFilter[indexPath.row] as! NSDictionary
+        }
+        else
+        {
+            dictObject = arrayFetchResult[indexPath.row] as! NSDictionary
+        }
         
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
@@ -284,14 +380,24 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool)
     {
-        if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
+        if (skipPagination == false )
         {
-            pageNumber = pageNumber + 1
-            
-            viewActivity.isHidden = false
-            view.isUserInteractionEnabled = false
-            
-            viewDidAppear(true)
+            if (isSearch == false)
+            {
+                if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height)
+                {
+                    pageNumber = pageNumber + 1
+                    
+                    viewActivity.isHidden = false
+                    view.isUserInteractionEnabled = false
+                    
+                    viewDidAppear(true)
+                }
+            }
+        }
+        else
+        {
+            skipPagination = false
         }
     }
     
