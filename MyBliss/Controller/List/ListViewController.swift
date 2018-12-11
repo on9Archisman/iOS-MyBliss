@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class ListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate
 {
     @IBOutlet weak var viewImageOuter: UIView!
     @IBOutlet weak var imageViewLogo: UIImageView!
     @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var searchBarList: UISearchBar!
     @IBOutlet weak var viewActivity: UIView!
     @IBOutlet weak var tableViewList: UITableView!
     
@@ -84,15 +85,13 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         pageNumber = 1
         
-        viewActivity.isHidden = true
+        viewActivity.isHidden = false
         view.isUserInteractionEnabled = false
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        
-        viewActivity.isHidden = false
         
         Helper.callAPIWithDataTask(param: "api/v1/dummy?page=\(pageNumber)", method: "get", data: nil) { (flag, result) in
             
@@ -190,7 +189,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         pageNumber = 1
         
-        viewActivity.isHidden = true
+        viewActivity.isHidden = false
         view.isUserInteractionEnabled = false
         
         viewDidAppear(true)
@@ -289,7 +288,7 @@ class ListViewController: UIViewController, UITableViewDataSource, UITableViewDe
         {
             pageNumber = pageNumber + 1
             
-            viewActivity.isHidden = true
+            viewActivity.isHidden = false
             view.isUserInteractionEnabled = false
             
             viewDidAppear(true)

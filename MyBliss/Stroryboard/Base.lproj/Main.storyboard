@@ -150,8 +150,21 @@ MyBliss. Inc.
                                     <constraint firstItem="FHm-FI-Kx9" firstAttribute="centerX" secondItem="S3o-aV-xY6" secondAttribute="centerX" id="zos-mm-PVT"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Title" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZb-x2-3BY">
+                                <rect key="frame" x="0.0" y="102" width="320" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aPb-nc-Qxg"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done" textContentType="name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9gK-Kt-qMq" id="gAD-bl-aMa"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6A-au-7Wr">
-                                <rect key="frame" x="0.0" y="102" width="320" height="466"/>
+                                <rect key="frame" x="0.0" y="152" width="320" height="416"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="70" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -294,11 +307,14 @@ MyBliss. Inc.
                             <constraint firstItem="G6A-au-7Wr" firstAttribute="bottom" secondItem="nTh-Cc-QKq" secondAttribute="bottom" id="4TV-jh-dsY"/>
                             <constraint firstItem="40L-i3-qRH" firstAttribute="bottom" secondItem="JZS-yl-pKD" secondAttribute="bottom" id="5Rb-A3-GOf"/>
                             <constraint firstItem="G6A-au-7Wr" firstAttribute="trailing" secondItem="nTh-Cc-QKq" secondAttribute="trailing" id="7VU-Gh-Isz"/>
-                            <constraint firstItem="G6A-au-7Wr" firstAttribute="top" secondItem="JZS-yl-pKD" secondAttribute="bottom" constant="16" id="Aya-sW-cFs"/>
+                            <constraint firstItem="BZb-x2-3BY" firstAttribute="trailing" secondItem="nTh-Cc-QKq" secondAttribute="trailing" id="Axl-Q6-egc"/>
                             <constraint firstItem="JZS-yl-pKD" firstAttribute="leading" secondItem="nTh-Cc-QKq" secondAttribute="leading" constant="16" id="FD5-Is-fcH"/>
                             <constraint firstItem="40L-i3-qRH" firstAttribute="leading" secondItem="JZS-yl-pKD" secondAttribute="trailing" constant="16" id="MpL-ea-5ps"/>
                             <constraint firstItem="G6A-au-7Wr" firstAttribute="leading" secondItem="nTh-Cc-QKq" secondAttribute="leading" id="OfG-Yz-yK3"/>
                             <constraint firstItem="40L-i3-qRH" firstAttribute="top" secondItem="Kpf-Ja-z4G" secondAttribute="bottom" id="Xj4-49-sOl"/>
+                            <constraint firstItem="G6A-au-7Wr" firstAttribute="top" secondItem="BZb-x2-3BY" secondAttribute="bottom" id="bDf-gL-HDl"/>
+                            <constraint firstItem="BZb-x2-3BY" firstAttribute="leading" secondItem="nTh-Cc-QKq" secondAttribute="leading" id="fLA-uL-ubM"/>
+                            <constraint firstItem="BZb-x2-3BY" firstAttribute="top" secondItem="JZS-yl-pKD" secondAttribute="bottom" constant="16" id="h9X-dt-odf"/>
                             <constraint firstItem="JZS-yl-pKD" firstAttribute="top" secondItem="nTh-Cc-QKq" secondAttribute="top" constant="16" id="lJg-hw-T1L"/>
                             <constraint firstItem="S3o-aV-xY6" firstAttribute="centerX" secondItem="MYX-mR-Iix" secondAttribute="centerX" id="rAu-Hh-5J1"/>
                             <constraint firstItem="Kpf-Ja-z4G" firstAttribute="top" secondItem="JZS-yl-pKD" secondAttribute="top" id="w62-Hy-JOx"/>
@@ -312,6 +328,7 @@ MyBliss. Inc.
                     <connections>
                         <outlet property="imageViewLogo" destination="SH9-r4-mP4" id="nrD-q9-OXZ"/>
                         <outlet property="labelDate" destination="40L-i3-qRH" id="VEx-cx-ung"/>
+                        <outlet property="searchBarList" destination="BZb-x2-3BY" id="qvT-He-2D2"/>
                         <outlet property="tableViewList" destination="G6A-au-7Wr" id="dFn-i0-Rvo"/>
                         <outlet property="viewActivity" destination="S3o-aV-xY6" id="fAe-fu-zzs"/>
                         <outlet property="viewImageOuter" destination="JZS-yl-pKD" id="K6y-6D-g8h"/>
